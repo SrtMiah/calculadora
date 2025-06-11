@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fundo {
+    height: 100vh;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    display: center;
+
+    animation: animarFundo 4s ease infinite;
+    background: linear-gradient(120deg, #00f0ff, #0077ff, #ff00cc, #ff1100);
+    background-size: 400% 400%;
+    text-align: center;
+}
+
+.calculadora {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 15px;
+    opacity: 0;
+    animation: aparecer 0.8s ease-out forwards;
+}
+
+.botao {
+    margin: 1px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    background-color: #111;
+    border: 2px solid #00f0ff;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff inset;
+}
+
+.botaoIgual {
+    margin: 2px;
+    width: 50px;
+    height: 106px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    background-color:#111;
+    border: 2px solid #ff00cc;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc inset;
+}
+.botaozero {
+    margin: 2px;
+    width: 104px;
+    height: 51px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #00f0ff;
+    background-color:#111;
+    border: 2px solid #00f0ff;
+    color: white;
+    
+}
+.botaoIgual:hover{
+    background-color:white;
+    color: black;
+    box-shadow: 0 0 15px #ff00cc, 0 0 25px #ff00cc inset 0 0 10px #000;
+}
+.botaozero:hover{
+    background-color: black;
+}
+.botao:hover{
+    background-color: #00f0ff;
+    color: black;
+    box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff inset 0 0 5px #000;
+}
+.botao, .botaoIgual {
+    transform: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.botao:active, .botaoIgual:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.botao:hover, .botaoIgual:hover {
+    background-color: #2e2d2d;
+    box-shadow: 0 0 10px rgba(130, 245, 253, 0.486);
+    transform: scale(1.05);
+    transition: transform 1s ease, box-shadow 0.1s ease, background-color 0.3s ease;
+}
+.rodape {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: o o 5px rgba(225, 225, 225, o.5s);
+}
+.titulo {
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 60px;
+    color: white;
+    text-shadow: 0 0 5px #000000, 0 0 1px #000000;
+}
+
+.estrela {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, gold, orange);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0, 0, 6px gold, 0 0 10px orange;
+    opacity: 1;
+    animation: desaparecer 0.8s ease-out forwards;
+}
+
+#resultado {
+    width: 212px;;
+    height: 30px;
+    margin: 5px;
+    font-size: 25px;
+    background-color: white;
+    color: black;
+    text-shadow: 0 0 5px white;
+
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes animarFundo {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes desaparecer {
+    to {
+        transform: translate(0, -20px) scale(0.5);
+        opacity: 0;
+    }
+}
+
